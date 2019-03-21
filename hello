@@ -1,0 +1,5 @@
+#!/usr/local/bin/node
+
+console.log("Hello world!")
+
+// to make file executable use console comand `chmod +x file_name`
