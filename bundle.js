@@ -2,10 +2,13 @@
 let Phrase = require("dal-palindrome-js");
 
 
-function palindromeTerster() {
-  let string = prompt("Please enter a string for palindrome testing:")
+function palindromeTerster(event) {
+  event.preventDefault();
+
+  let string = event.target.phrase.value
   let phrase = new Phrase(string);
 
+// when using data attribute as querySelector make shure that in html it has proer value
   let palindromeResult = document.querySelector('[data-js-result]')
 
   if (phrase.palindrome()) {
@@ -16,9 +19,9 @@ function palindromeTerster() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  let button = document.querySelector('[data-js-button-palindrome]');
-  button.addEventListener("click", function() {
-    palindromeTerster();
+  let tester = document.querySelector('#palindromeTester');
+  tester.addEventListener("submit", function(event) {
+    palindromeTerster(event);
   });
 })
 
