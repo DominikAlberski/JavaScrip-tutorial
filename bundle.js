@@ -47,7 +47,11 @@ function Phrase(content) {
 
   this.palindrome = function palindrome() {
     let processedContent = this.letters().toLowerCase();
-    return processedContent === reverse(processedContent);
+    if ( processedContent ) {
+      return processedContent === reverse(processedContent);
+    } else {
+      return false
+    }
   }
 
   this.letters = function letters() {
